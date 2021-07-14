@@ -3,8 +3,9 @@ import React from "react";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import clsx from "clsx";
 
-const ContactBlock = () => {
+const ContactBlock = (props) => {
     return (
         <>
             <div className="parent-hover w-full h-full text-white overflow-hidden relative">
@@ -13,7 +14,12 @@ const ContactBlock = () => {
                         Contact&nbsp;&nbsp;Contact&nbsp;&nbsp;
                     </p>
                 </div>
-                <div className="absolute w-full h-full text-2xl flex justify-end z-10 items-end">
+                <div
+                    className={clsx(
+                        "absolute w-full h-full text-2xl flex justify-end z-10 items-end",
+                        props.touch && "flex-col text-sm"
+                    )}
+                >
                     <a
                         href="https://github.com/eveshi"
                         target="_blank"

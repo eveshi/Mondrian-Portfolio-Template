@@ -1,3 +1,14 @@
+.touch .parent-hover > .child-hover {
+    display: inline-block;
+    opacity: 0.8;
+}
+
+.touch .parent-hover > .child-hover-flex {
+    display: flex;
+    align-items: center;
+    opacity: 0.8;
+}
+
 .parent-hover:hover > .child-hover {
     display: inline-block;
 }

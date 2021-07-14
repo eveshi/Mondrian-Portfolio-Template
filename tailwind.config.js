@@ -88,9 +88,11 @@ module.exports = {
             },
             maxHeight: {
                 480: "480px",
+                "50screen": "50vh",
             },
             maxWidth: {
                 480: "480px",
+                "80screen": "80vw",
             },
             margin: {
                 "w1/5": "20vw",

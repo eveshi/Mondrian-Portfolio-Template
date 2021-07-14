@@ -3,13 +3,13 @@ import React from "react";
 const NameBlock = () => {
     return (
         <>
-            <div className="font-headline text-8xl flex flex-wrap justify-center items-center">
-                <div className="flex h-24 mr-8">
+            <div className="font-headline text-6xl sm:text-8xl flex flex-wrap justify-center items-center">
+                <div className="flex h-16 sm:h-24 mr-8">
                     <p className="hover:uppercase hover:pt-8">e</p>
                     <p className="hover:uppercase hover:pt-8">v</p>
                     <p className="hover:uppercase hover:pt-8">e</p>
                 </div>
-                <div className="flex h-24">
+                <div className="flex h-16 sm:h-24">
                     <p className="hover:uppercase hover:pt-8">s</p>
                     <p className="hover:uppercase hover:pt-8">h</p>
                     <p className="hover:uppercase hover:pt-8">i</p>

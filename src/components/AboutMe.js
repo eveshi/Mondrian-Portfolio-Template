@@ -68,28 +68,28 @@ const AboutMe = (props) => {
     const { countOpenAboutMe } = props;
     const [showOpening, setShowOpening] = useState(null);
 
-    useEffect(() => {
-        setShowOpening(true);
-        const contanier = document.getElementById("abtContanier");
-        contanier.scrollTop = 0;
-        const openingTimeId = setTimeout(() => {
-            setShowOpening(false);
-        }, 3000);
+    // useEffect(() => {
+    //     setShowOpening(true);
+    //     const contanier = document.getElementById("abtContanier");
+    //     contanier.scrollTop = 0;
+    //     const openingTimeId = setTimeout(() => {
+    //         setShowOpening(false);
+    //     }, 2000);
 
-        const scrollTimeId = setTimeout(() => {
-            animateScrollTo(contanier.scrollHeight, {
-                elementToScroll: contanier,
-                maxDuration: 90000,
-                speed: 12000,
-                easing: (t) => t,
-            });
-        }, 4000);
+    //     const scrollTimeId = setTimeout(() => {
+    //         animateScrollTo(contanier.scrollHeight, {
+    //             elementToScroll: contanier,
+    //             maxDuration: 90000,
+    //             speed: 12000,
+    //             easing: (t) => t,
+    //         });
+    //     }, 3000);
 
-        return () => {
-            clearTimeout(openingTimeId);
-            clearTimeout(scrollTimeId);
-        };
-    }, [countOpenAboutMe]);
+    //     return () => {
+    //         clearTimeout(openingTimeId);
+    //         clearTimeout(scrollTimeId);
+    //     };
+    // }, [countOpenAboutMe]);
 
     const getRow = (repeat, line) => {
         const text = "ABOUT&ME&".repeat(repeat);
@@ -118,7 +118,7 @@ const AboutMe = (props) => {
                 className="absolute top-0 left-0 z-0 h-full w-full overflow-scroll"
                 id="abtContanier"
             >
-                <div className="w-full h-16"></div>
+                <div className="w-full sm:h-16 h-24"></div>
                 {abts.map((abt, index) => (
                     <AboutItem
                         key={"abt" + index}
