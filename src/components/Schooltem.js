@@ -9,7 +9,7 @@ const SchoolItem = (props) => {
     return (
         <div
             className={clsx(
-                "w-screen sm:w-110 shadow-lg flex flex-col p-6 gap-4",
+                "w-screen sm:w-110 shadow-lg flex flex-col p-6 gap-4 sm:mr-0 mr-8",
                 "bg-white"
             )}
         >
