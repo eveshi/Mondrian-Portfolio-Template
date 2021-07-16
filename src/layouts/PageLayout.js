@@ -17,7 +17,7 @@ const PageLayout = ({ children }) => {
             </div>
             <HomeButton
                 bgColor="bg-red-700"
-                handleBackToHome={handleBackToHome}
+                handleBackToHome={() => handleBackToHome()}
             />
         </>
     );

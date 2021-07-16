@@ -2,31 +2,7 @@ import React from "react";
 
 import clsx from "clsx";
 import SchoolItem from "src/components/Schooltem";
-
-const edus = [
-    {
-        img: "nyu.jpg",
-        name: "NYU",
-        time: "2020 ~ present.",
-        major: "Data Science",
-        caption: "Now, I have a NYU unicorn and we have the same T-shirt!",
-    },
-    {
-        img: "cuhk.jpg",
-        name: "CUHK",
-        time: "2017 ~ 2019",
-        major: "Anthropology",
-        caption:
-            "I always enjoy the sunset outside the Anthropology department.",
-    },
-    {
-        img: "hkbu.jpg",
-        name: "HKBU",
-        time: "2011 ~ 2015",
-        major: "Journalism",
-        caption: `A paper on my teacher's desk said: "Cry is meaningless. Turn a sigh into a sign of vitality."`,
-    },
-];
+import { EDUCATION } from "src/constant";
 
 const School = () => {
     const maxClasses = "2xl:leading-10rem 2xl:-bottom-32 2xl:text-10xl ";
@@ -62,8 +38,8 @@ const School = () => {
             </div>
             <div className="absolute top-0 left-0 z-10 h-full w-full overflow-x-scroll">
                 <div className="h-full w-max flex flex-row items-center gap-3 px-36">
-                    {edus &&
-                        edus.map((edu, index) => (
+                    {EDUCATION &&
+                        EDUCATION.map((edu, index) => (
                             <SchoolItem
                                 key={edu + index}
                                 img={edu.img}

@@ -1,36 +1,7 @@
 import React from "react";
 
 import ProjectItem from "src/components/ProjectItem";
-
-const pros = [
-    {
-        name: "AI-Based 3D Model Search Engine",
-        img: "3d-browser.png",
-        link: "https://ai4cemodels.com",
-        tags: [
-            "ReactJS",
-            "Material-UI",
-            "DataViz",
-            "D3.js",
-            "WebGL",
-            "AWS",
-            "RDS MySQL",
-            "Django REST framework",
-        ],
-        dev: true,
-    },
-    {
-        name: "Modality-agnostic Road Traffic Monitoring",
-        img: "traffic.png",
-        tags: [
-            "Machine Learning",
-            "DataViz",
-            "New Dataset",
-            "Multi-modal Analysis",
-        ],
-        dev: true,
-    },
-];
+import { PROJECTS } from "src/constant";
 
 const Projects = () => {
     return (
@@ -39,8 +10,8 @@ const Projects = () => {
                 Selected Projects
             </p>
             <div className="h-full w-full overflow-scroll flex flex-col gap-3 bg-black">
-                {pros &&
-                    pros.map((pro, index) => (
+                {PROJECTS &&
+                    PROJECTS.map((pro, index) => (
                         <ProjectItem
                             name={pro.name}
                             img={pro.img}
