@@ -4,6 +4,8 @@ import { faTools, faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import clsx from "clsx";
 
+import SuspenseImg from "./SuspenseImg";
+
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
 const BG_COLOR = ["bg-yellow-500", "bg-blue-900", "bg-red-700"];
@@ -25,7 +27,7 @@ const ProjectItem = (props) => {
         >
             <div
                 className={clsx(
-                    "sm:w-3/5 overflow-scroll relative parent-hover items-center",
+                    "sm:w-3/5 overflow-scroll relative parent-hover items-center h-full",
                     odd ? "sm:pl-12" : "sm:pr-12",
                     "w-full h-1/2"
                 )}
@@ -33,11 +35,12 @@ const ProjectItem = (props) => {
                 <p className="hidden w-full text-center child-hover sticky top-0 left-0 z-10 bg-black text-white bg-opacity-10 py-1">
                     You can scroll
                 </p>
-                <img src={PUBLIC_URL + "/" + img} className="w-full" />
+                {/* <img src={PUBLIC_URL + "/" + img} className="w-full" /> */}
+                <SuspenseImg src={PUBLIC_URL + "/" + img} className="w-full" />
             </div>
             <div
                 className={clsx(
-                    "sm:w-2/5 text-black pt-4 px-4 flex flex-col",
+                    "sm:w-2/5 text-black pt-4 px-4 flex flex-col h-full",
                     odd ? "sm:items-start" : "sm:items-end",
                     "w-full h-1/2"
                 )}

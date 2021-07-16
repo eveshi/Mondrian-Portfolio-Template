@@ -1,8 +1,90 @@
-import React from "react";
+export const ABOUT_ME = [
+    {
+        img: "hk.jpeg",
+        info: "The street I live@2019",
+        content:
+            "I came from Hong Kong, where you could have a cyberpunk bay window.",
+        style: "left",
+    },
+    {
+        img: "cat_and_me.jpg",
+        info: "My cat and I@2020",
+        content: "Back there, I had the cutest cat in the world,",
+        style: "right",
+    },
+    {
+        img: "bookstore.jpg",
+        info: "Old Heaven Bookstore@2019",
+        content:
+            "and.. the best bookstore. Musicians played avant-garde jazz there all night long.",
+        style: "left",
+    },
+    {
+        img: "music.jpg",
+        info: "Me on my vinyl unboxing vlog@2021",
+        content:
+            "Oh, jazz! I love jazz! I go to live shows and collect cassettes and vinyls. Once upon a time, I worked as a freelance music critic.",
+        style: "wide",
+    },
+    {
+        content: "Jazz is the reason why I came to New York City!",
+        style: "wordsonly",
+    },
+    {
+        img: "sunset.jpg",
+        info: "Sunset outside our terrace@2021",
+        content:
+            "My apartment in NYC has a big terrace, where I can watch the beautiful sunset everyday.",
+        style: "right",
+    },
+    {
+        content:
+            "If it is dusk on Saturday, you can turn on FM 91.1, enjoy your sunset with my favorite radio show -- Transpacific Sound Paradise.",
+        style: "wordsonly",
+    },
+    {
+        img: "community.jpg",
+        info: "My favorite episode of my favorite sitcom",
+        content: "And this always make current timeline the perfect timeline!",
+        style: "left",
+    },
+    {
+        content: "The End.",
+        style: "end",
+    },
+];
 
-import ExperienceItem from "./ExperienceItem";
+export const PROJECTS = [
+    {
+        name: "AI-Based 3D Model Search Engine",
+        img: "3d-browser.png",
+        link: "https://ai4cemodels.com",
+        tags: [
+            "ReactJS",
+            "Material-UI",
+            "DataViz",
+            "D3.js",
+            "WebGL",
+            "AWS",
+            "RDS MySQL",
+            "Django REST framework",
+        ],
+        dev: true,
+    },
+    {
+        name: "Modality-agnostic Road Traffic Monitoring",
+        img: "traffic.png",
+        tags: [
+            "Machine Learning",
+            "DataViz",
+            "New Dataset",
+            "Multi-modal Analysis",
+        ],
+        dev: true,
+    },
+];
 
-const exps = [
+export const EXPERIENCE = [
     {
         color: "blue-900",
         position: "Fullstack Developer",
@@ -109,26 +191,27 @@ const exps = [
     },
 ];
 
-const Experience = () => {
-    return (
-        <div className="relative h-full w-full grid grid-cols-1 overflow-scroll md:grid-cols-3">
-            <p className="absolute -top-2.5 left-16 align-top uppercase font-normal text-4xl 2xl:text-6xl 2xl:-top-3">
-                Experience
-            </p>
-            {exps &&
-                exps.map((exp, index) => (
-                    <ExperienceItem
-                        key={"exp" + index}
-                        color={exp.color}
-                        position={exp.position}
-                        company={exp.company}
-                        company_link={exp.company_link}
-                        time={exp.time}
-                        items={exp.items}
-                    />
-                ))}
-        </div>
-    );
-};
-
-export default Experience;
+export const EDUCATION = [
+    {
+        img: "nyu.jpg",
+        name: "NYU",
+        time: "2020 ~ present.",
+        major: "Data Science",
+        caption: "Now, I have a NYU unicorn and we have the same T-shirt!",
+    },
+    {
+        img: "cuhk.jpg",
+        name: "CUHK",
+        time: "2017 ~ 2019",
+        major: "Anthropology",
+        caption:
+            "I always enjoy the sunset outside the Anthropology department.",
+    },
+    {
+        img: "hkbu.jpg",
+        name: "HKBU",
+        time: "2011 ~ 2015",
+        major: "Journalism",
+        caption: `A paper on my teacher's desk said: "Cry is meaningless. Turn a sigh into a sign of vitality."`,
+    },
+];

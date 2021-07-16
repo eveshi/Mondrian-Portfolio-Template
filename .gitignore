@@ -26,4 +26,8 @@ yarn.lock
 
 cypress.json
 
+.firebaserc
 
+firebase.json
+
+.firebase

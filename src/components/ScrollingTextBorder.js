@@ -5,7 +5,7 @@ import clsx from "clsx";
 const ScrollingTextBorder = (props) => {
     const { text, bgColor } = props;
 
-    const pClasses = clsx("animate-slideslow w-max", bgColor);
+    const pClasses = clsx("animate-slide-slow w-max", bgColor);
     const t = text.repeat(2);
 
     return (

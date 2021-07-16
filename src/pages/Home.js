@@ -1,21 +1,17 @@
 import React, { useEffect, useState } from "react";
 
 import clsx from "clsx";
+import { useHistory } from "react-router";
 import ContactBlock from "src/components/ContactBlock";
-import ContentBox from "src/components/ContentBox";
-import HomeButton from "src/components/HomeButton";
 import NameBlock from "src/components/NameBlock";
+import NavigateButton from "src/components/NavigateButton";
 import ScrollingTextBorder from "src/components/ScrollingTextBorder";
 
 import "./Home.css";
 
 const Home = () => {
-    const [expeirenceOpen, setExperienceOpen] = useState(false);
-    const [aboutOpen, setAboutOpen] = useState(false);
-    const [projectsOpen, setProjectsOpen] = useState(false);
-    const [schoolOpen, setSchoolOpen] = useState(false);
-    const [countOpenAboutMe, SetCountOpenAboutMe] = useState(0);
     const [touch, setTouch] = useState(false);
+    const history = useHistory();
 
     useEffect(() => {
         if ("ontouchstart" in document.documentElement) {
@@ -24,27 +20,19 @@ const Home = () => {
     }, []);
 
     const handleExperienceOpen = () => {
-        setExperienceOpen(true);
+        history.push("/experience");
     };
 
     const handleAboutOpen = () => {
-        SetCountOpenAboutMe(countOpenAboutMe + 1);
-        setAboutOpen(true);
+        history.push("/about");
     };
 
     const handleProjectsOpen = () => {
-        setProjectsOpen(true);
+        history.push("/projects");
     };
 
     const handleSchoolOpen = () => {
-        setSchoolOpen(true);
-    };
-
-    const handleBackToHome = () => {
-        setExperienceOpen(false);
-        setAboutOpen(false);
-        setProjectsOpen(false);
-        setSchoolOpen(false);
+        history.push("/education");
     };
 
     return (
@@ -78,24 +66,22 @@ const Home = () => {
                 />
             </div>
             <div className="col-start-2 col-span-2 sm:col-start-6 row-start-6 row-span-1 sm:row-start-2 sm:row-span-2 bg-yellow-400">
-                <ContentBox
+                <NavigateButton
                     bgColor="bg-yellow-400"
-                    open={expeirenceOpen}
-                    handleContentOpen={handleExperienceOpen}
                     contentTitle="Experience"
                     contentName="experience"
+                    handleContentOpen={handleExperienceOpen}
                 />
             </div>
             <div className="col-start-2 col-span-1 row-start-4 row-span-1 sm:col-start-6 sm:row-span-2 bg-white"></div>
             <div className="col-start-3 col-span-1 row-start-4 row-span-1 sm:col-start-7 sm:row-span-2 bg-white"></div>
             <div className="col-span-1 col-start-4 row-start-1 row-span-3 sm:col-span-1 sm:col-start-1 sm:row-start-4 sm:row-span-3 bg-indigo-50"></div>
             <div className="col-start-2 col-span-2 sm:col-start-2 row-start-5 row-span-1 sm:row-start-6 sm:row-span-2 bg-black">
-                <ContentBox
+                <NavigateButton
                     bgColor="bg-black"
-                    open={projectsOpen}
-                    handleContentOpen={handleProjectsOpen}
                     contentTitle="Projects"
                     contentName="projects"
+                    handleContentOpen={handleProjectsOpen}
                 />
             </div>
             <div className="col-start-4 col-span-2 row-start-6 row-span-1 bg-indigo-50 hidden sm:block"></div>
@@ -112,22 +98,19 @@ const Home = () => {
             </div>
             <div className="col-start-4 col-span-2 row-start-7 row-span-1 bg-indigo-50 hidden sm:block"></div>
             <div className="col-start-1 col-span-1 row-start-4 row-span-2 sm:col-start-6 sm:col-span-2 sm:row-start-7 bg-blue-900">
-                <ContentBox
+                <NavigateButton
                     bgColor="bg-blue-900"
-                    open={aboutOpen}
-                    handleContentOpen={handleAboutOpen}
                     contentTitle="About Me"
                     contentName="aboutme"
-                    countOpenAboutMe={countOpenAboutMe}
+                    handleContentOpen={handleAboutOpen}
                 />
             </div>
             <div className="col-start-4 col-span-1 row-start-5 row-span-2 sm:col-start-8 sm:col-span-1 sm:row-start-7 sm:row-span-1 bg-red-700">
-                <ContentBox
+                <NavigateButton
                     bgColor="bg-red-700"
-                    open={schoolOpen}
-                    handleContentOpen={handleSchoolOpen}
                     contentTitle="Education"
                     contentName="school"
+                    handleContentOpen={handleSchoolOpen}
                 />
             </div>
             <div className="col-start-2 col-span-2 row-start-8 row-span-1 bg-white hidden sm:block"></div>
@@ -136,11 +119,6 @@ const Home = () => {
             </div>
             <div className="col-start-8 col-span-1 row-start-8 row-span-1 bg-white hidden sm:block"></div>
             <div className="col-start-1 col-span-1 row-start-6 row-span-1 bg-white sm:hidden"></div>
-            <HomeButton
-                bgColor="bg-red-700"
-                handleBackToHome={handleBackToHome}
-                open={expeirenceOpen || aboutOpen || projectsOpen || schoolOpen}
-            />
         </div>
     );
 };
