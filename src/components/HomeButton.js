@@ -9,12 +9,7 @@ const HomeButton = (props) => {
     const { handleBackToHome, open } = props;
 
     return (
-        <div
-            className={clsx(
-                "fixed bottom-4 right-0 z-50",
-                open ? null : "hidden"
-            )}
-        >
+        <div className="fixed bottom-4 right-0 z-50">
             <button
                 onClick={() => handleBackToHome()}
                 className={clsx(

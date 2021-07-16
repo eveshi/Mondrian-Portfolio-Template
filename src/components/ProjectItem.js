@@ -25,7 +25,7 @@ const ProjectItem = (props) => {
         >
             <div
                 className={clsx(
-                    "sm:w-3/5 overflow-scroll relative parent-hover items-center",
+                    "sm:w-3/5 overflow-scroll relative parent-hover items-center h-full",
                     odd ? "sm:pl-12" : "sm:pr-12",
                     "w-full h-1/2"
                 )}
@@ -37,7 +37,7 @@ const ProjectItem = (props) => {
             </div>
             <div
                 className={clsx(
-                    "sm:w-2/5 text-black pt-4 px-4 flex flex-col",
+                    "sm:w-2/5 text-black pt-4 px-4 flex flex-col h-full",
                     odd ? "sm:items-start" : "sm:items-end",
                     "w-full h-1/2"
                 )}

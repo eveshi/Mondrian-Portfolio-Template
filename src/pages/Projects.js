@@ -1,6 +1,6 @@
 import React from "react";
 
-import ProjectItem from "./ProjectItem";
+import ProjectItem from "src/components/ProjectItem";
 
 const pros = [
     {

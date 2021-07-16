@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 
 import animateScrollTo from "animated-scroll-to";
 import clsx from "clsx";
-
-import AboutItem from "./AboutItem";
-import AboutMeOpening from "./AboutMeOpening";
+import AboutItem from "src/components/AboutItem";
+import AboutMeOpening from "src/components/AboutMeOpening";
 
 const abts = [
     {
@@ -64,12 +63,10 @@ const abts = [
 
 const TEXT_COLOR = ["text-red-900", "text-blue-900", "text-yellow-50"];
 
-const AboutMe = (props) => {
-    const { countOpenAboutMe } = props;
-    const [showOpening, setShowOpening] = useState(null);
+const AboutMe = () => {
+    const [showOpening, setShowOpening] = useState(true);
 
     useEffect(() => {
-        setShowOpening(true);
         const contanier = document.getElementById("abtContanier");
         contanier.scrollTop = 0;
         const openingTimeId = setTimeout(() => {
@@ -89,7 +86,7 @@ const AboutMe = (props) => {
             clearTimeout(openingTimeId);
             clearTimeout(scrollTimeId);
         };
-    }, [countOpenAboutMe]);
+    }, []);
 
     const getRow = (repeat, line) => {
         const text = "ABOUT&ME&".repeat(repeat);
@@ -106,14 +103,12 @@ const AboutMe = (props) => {
     };
     return (
         <div className="h-full w-full relative bg-black">
-            {!showOpening && (
-                <div className="absolute top-0 left-0 z-10 items-center text-xl black-to-white h-24">
-                    <div className="w-max flex flex-row">{getRow(45, 0)}</div>
-                </div>
-            )}
             {showOpening && (
                 <AboutMeOpening getRow={(line) => getRow(6, line)} />
             )}
+            <div className="absolute top-0 left-0 z-10 items-center text-xl black-to-white h-24">
+                <div className="w-max flex flex-row">{getRow(45, 0)}</div>
+            </div>
             <div
                 className="absolute top-0 left-0 z-0 h-full w-full overflow-scroll"
                 id="abtContanier"

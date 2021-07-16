@@ -41,8 +41,10 @@ module.exports = {
             },
             animation: {
                 slide: "slide 5s linear infinite",
-                slideslow: "slide 15s linear infinite",
-                slidesuperslow: "slide 30s linear infinite",
+                "slide-normal": "slide 10s linear infinite",
+                "slide-slow": "slide 15s linear infinite",
+                "slide-superslow": "slide 30s linear infinite",
+                "fade-in": "fade-in 1s ease-in",
             },
             keyframes: {
                 slide: {
@@ -53,7 +55,7 @@ module.exports = {
                         transform: "translate(-50%, 0)",
                     },
                 },
-                slideslow: {
+                "slide-normal": {
                     from: {
                         transform: "translate(0%, 0)",
                     },
@@ -61,12 +63,28 @@ module.exports = {
                         transform: "translate(-50%, 0)",
                     },
                 },
-                slidesuperslow: {
+                "slide-slow": {
                     from: {
                         transform: "translate(0%, 0)",
                     },
                     to: {
                         transform: "translate(-50%, 0)",
+                    },
+                },
+                "slide-superslow": {
+                    from: {
+                        transform: "translate(0%, 0)",
+                    },
+                    to: {
+                        transform: "translate(-50%, 0)",
+                    },
+                },
+                "fade-in": {
+                    "0%": {
+                        opacity: "0",
+                    },
+                    "100%": {
+                        opacity: "1",
                     },
                 },
             },

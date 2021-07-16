@@ -1,6 +1,6 @@
 import React from "react";
 
-import ExperienceItem from "./ExperienceItem";
+import ExperienceItem from "src/components/ExperienceItem";
 
 const exps = [
     {
