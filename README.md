@@ -1,4 +1,4 @@
-# Eve Shi's Profolio
+# Mondrian Portfolio Template
 
 **Frontend framework:** React
 
