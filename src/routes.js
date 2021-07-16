@@ -1,19 +1,12 @@
 import React, { Suspense, lazy, Fragment } from "react";
 
-import { Helmet } from "react-helmet";
-import ReactLoading from "react-loading";
-import { Switch, Route } from "react-router-dom";
-
-import PageLayout from "./layouts/PageLayout";
+import { Helmet } from "react-helmet-async";
+import { Switch, Route, Redirect } from "react-router-dom";
+import Loader from "src/components/Loader";
+import PageLayout from "src/layouts/PageLayout";
 
 export const renderRoutes = (routes = []) => (
-    <Suspense
-        fallback={
-            <div className="w-screen h-screen flex flex-col items-center justify-center bg-white">
-                <ReactLoading type={"cubes"} color="#FB9966" />
-            </div>
-        }
-    >
+    <Suspense fallback={<Loader />}>
         <Switch>
             {routes.map((route, index) => {
                 const Layout = route.layout || Fragment;
@@ -22,7 +15,7 @@ export const renderRoutes = (routes = []) => (
 
                 return (
                     <Route
-                        key={index}
+                        key={"route_" + index}
                         path={route.path}
                         exact={route.exact}
                         render={(props) => (
@@ -71,7 +64,9 @@ export const routes = [
     },
     {
         name: "Home",
-        path: "*",
+        exact: true,
+        path: "/",
         component: lazy(() => import("./pages/Home")),
     },
+    { path: "*", component: () => <Redirect to="/" /> },
 ];

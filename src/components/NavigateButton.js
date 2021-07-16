@@ -19,6 +19,13 @@ const NavigateButton = (props) => {
                     {title.repeat(3)}
                 </p>
             </div>
+            <div className="absolute child-hover-disapear w-full right-0 bottom-0 2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl text-xl text-white uppercase font-extrabold text-opacity-30 flex justify-end items-end flex-wrap-reverse">
+                {title.split("").map((cha, index) => (
+                    <p key={"home_title_" + index} className="leading-none">
+                        {cha}
+                    </p>
+                ))}
+            </div>
         </button>
     );
 };

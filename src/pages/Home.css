@@ -18,6 +18,14 @@
     align-items: center;
 }
 
+.parent-hover:hover > .child-hover-disapear {
+    display: none;
+}
+
+.touch .parent-hover > .child-hover-disapear {
+    display: none;
+}
+
 .animation-reverse {
     animation-direction: reverse;
 }

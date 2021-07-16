@@ -44,7 +44,8 @@ module.exports = {
                 "slide-normal": "slide 10s linear infinite",
                 "slide-slow": "slide 15s linear infinite",
                 "slide-superslow": "slide 30s linear infinite",
-                "fade-in": "fade-in 1s ease-in",
+                "bounce-load":
+                    "bouncing 1s infinite alternate cubic-bezier(.5, 0.05, 1, .5)",
             },
             keyframes: {
                 slide: {
@@ -55,36 +56,14 @@ module.exports = {
                         transform: "translate(-50%, 0)",
                     },
                 },
-                "slide-normal": {
+                bouncing: {
                     from: {
-                        transform: "translate(0%, 0)",
-                    },
-                    to: {
-                        transform: "translate(-50%, 0)",
-                    },
-                },
-                "slide-slow": {
-                    from: {
-                        transform: "translate(0%, 0)",
-                    },
-                    to: {
-                        transform: "translate(-50%, 0)",
-                    },
-                },
-                "slide-superslow": {
-                    from: {
-                        transform: "translate(0%, 0)",
-                    },
-                    to: {
-                        transform: "translate(-50%, 0)",
-                    },
-                },
-                "fade-in": {
-                    "0%": {
-                        opacity: "0",
-                    },
-                    "100%": {
                         opacity: "1",
+                        transform: "translateY(0);",
+                    },
+                    to: {
+                        opacity: "0.1",
+                        transform: "translateY(-32px);",
                     },
                 },
             },
