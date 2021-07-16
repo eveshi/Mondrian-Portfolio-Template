@@ -1,5 +1,7 @@
 # Mondrian Portfolio Template
 
+![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/16256749/125957433-86f65d94-03d5-4d7c-99fa-00a0e3491eb2.gif)
+
 **Frontend framework:** React
 
 **CSS framework:** tailwindcss
